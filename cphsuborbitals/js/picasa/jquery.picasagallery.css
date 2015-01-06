@@ -1,0 +1,119 @@
+
+.picasagallery {
+	text-align: left;
+	border: 0px solid black;
+	position: relative;
+}
+
+.picasagallery > div {
+	width:100%;
+	display:block;
+}
+
+.picasagallery_header {
+	float:left;
+	cursor: pointer;
+	font-size: 12px;
+	font-weight:bold;
+	color:#fff;
+	text-decoration: underline;
+	width:auto;
+	padding:10px;
+	margin:0 0 20px;
+	background:#000;
+	text-decoration:none;
+	display:none;
+}
+
+.picasagallery_title {
+	float:left;
+	cursor: pointer;
+	font-size: 12px;
+	font-weight: normal;
+	color: #000;
+	text-decoration: none;
+	width:auto;
+	padding:10px;
+	margin:0 0 20px 6px;
+	border-radius:5px;
+	display:none;
+}
+
+.picasagallery_album {
+	float: left;
+	width: 100%;
+	max-width:200px;
+	text-align: center;
+	font-size: 10px;
+	margin: 0 15px 15px 0; /* top right bottom left */
+}
+
+.picasagallery_album p {
+	margin:0 0 6px;
+	padding:0;
+	width:100%;
+	max-width:200px;
+	line-height:12px;
+}
+
+.picasagallery_album p + p {
+	margin:0;
+	padding:0;
+	width:100%;
+	max-width:200px;
+}
+
+.picasagallery_album img {
+	width:100%;
+	max-width:200px;
+	border: 0px;
+	cursor: pointer;
+	margin: 0px 0px 5px 0px; /* top right bottom left */
+}
+
+.picasagallery_thumbnail {
+	float:left;
+	width:100%;
+	max-width:200px;
+	margin:0 10px 0 0;
+}
+
+.picasagallery_thumbnail:last-child {
+	margin:0;
+}
+
+.picasagallery_thumbnail img {
+	width:100%;
+	max-width:190%;
+	border: 0px;
+	cursor: pointer;
+	margin: 15px 0 15px 0; /* top right bottom left */
+}
+
+.picasagallery_photo {
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	display: none;
+}
+
+
+@media 
+only screen 
+and ( min-width: 768px ) 
+and ( orientation: portrait ) {
+
+.picasagallery_album p {
+	max-width:127px !important;
+}
+
+.picasagallery_album p + p {
+	max-width:127px !important;
+}
+
+.picasagallery_album {
+	max-width:127px !important;
+}
+
+}
