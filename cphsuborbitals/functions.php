@@ -1,7 +1,4 @@
 <?php
-
-
-
 /* Load the core HYBRID theme framework by Justin Tadlock MR. WP Guru himself :-) */
 require_once( trailingslashit( get_template_directory() ) . 'library/hybrid.php' );
 
@@ -54,30 +51,6 @@ require_once( CBH_PATH . '/library/detect_unit.php' );
    remove_action( 'wp_head', 'adjacent_posts_rel_link', 10, 0 ); // Display relational links for the posts adjacent to the current post.
    remove_action( 'wp_head', 'wp_generator', 1 ); // Display the XHTML generator that is generated on the wp_head hook, WP version
 
-/*
---------------------------------------
-[ @-> add image sizes media uploader ]
---------------------------------------
-*/
-	add_theme_support( 'post-thumbnails' );
-	add_image_size( 'post-thumb-small', 260, 9999 ); 
-	add_image_size( 'post-thumb-big', 655, 9999 ); 
-	add_image_size( 'post-thumb-table', 600, 9999 ); 
-	
-	function cphsuborbitals_set_image_sizes( $sizes ) {
-	
-		$addsizes = array(
-				'post-thumb-small' => __( 'Post thumbnail width 260 x auto' ),
-				'post-thumb-big' => __( 'Post thumbnail width 655 x auto' ),
-				'post-thumb-table' => __( 'Post thumbnail width 600 x auto' )
-			 );
-			
-		$newsizes = array_merge( $sizes, $addsizes );
-		return $newsizes;
-	}
-
-	add_filter('image_size_names_choose', 'cphsuborbitals_set_image_sizes');
-
 
 /*
 --------------------------------
@@ -88,8 +61,8 @@ require_once( CBH_PATH . '/library/detect_unit.php' );
     remove_theme_support( 'post-formats' );
     add_theme_support( 'loop-pagination' );
     add_theme_support( 'breadcrumb-trail' );
-    add_theme_support( 'hybrid-core-shortcodes' );
-//    add_theme_support( 'hybrid-core-widgets' );
+//    add_theme_support( 'hybrid-core-shortcodes' );
+
 
 /*
 ------------------------------------
@@ -150,8 +123,8 @@ require_once( CBH_PATH . '/library/detect_unit.php' );
 			// video gallery Youtube
 			if ( is_front_page() ) {
 				
-				wp_register_script('youtube-api',  "http://www.youtube.com/player_api", array( 'jquery' ), '1.0', true );
-				wp_enqueue_script('youtube-api');
+				//wp_register_script('youtube-api',  "http://www.youtube.com/player_api", array( 'jquery' ), '1.0', true );
+				//wp_enqueue_script('youtube-api');
 
 			    wp_register_script( 'main-js',  "{$url}" . "/js/cphsuborbitals.js", array( 'jquery','youtube-api' ), '1.0', true );
 			    wp_enqueue_script( 'main-js' );
@@ -165,7 +138,9 @@ require_once( CBH_PATH . '/library/detect_unit.php' );
 
 
 		}
-		
+			wp_enqueue_script('share42', "{$url}" . '/js/share42.js');
+			wp_enqueue_script('donation', "{$url}" . '/js/donation.js');
+
 	}
 
 	add_action( 'wp_enqueue_scripts', 'cphsuborbitals_add_scripts', 100 );
@@ -184,7 +159,7 @@ require_once( CBH_PATH . '/library/detect_unit.php' );
 	}
 	
 
-	add_filter( 'the_content_more_link', 'remove_more_link_scroll' );
+//	add_filter( 'the_content_more_link', 'remove_more_link_scroll' );
 
 
 /*
@@ -252,7 +227,7 @@ require_once( CBH_PATH . '/library/detect_unit.php' );
 ----------------
 */
 
-	add_action( 'wp', 'addShortcodes' );
+//	add_action( 'wp', 'addShortcodes' );
 
 	function addShortcodes() {
 		
@@ -291,7 +266,7 @@ require_once( CBH_PATH . '/library/detect_unit.php' );
 
 	}
 	
-	add_filter('body_class','child_add_category_to_single');
+//	add_filter('body_class','child_add_category_to_single');
 
 
 /*
@@ -318,72 +293,7 @@ require_once( CBH_PATH . '/library/detect_unit.php' );
 	
 	add_filter( 'admin_head', 'cphsuborbitals_relabel_feautured_image' );
 		  
-/*
------------------
-[ @ search form ]
------------------
-*/
 
-	function cphsuborbitals_search_form( $form ) {
-		$form = '<form role="search" method="get" id="searchform" action="' . home_url( '/' ) . '" >
-		<div>
-		  <input type="text" value="' . get_search_query() . '" name="s" placeholder="Search..." id="s" />
-		  <input type="submit" id="searchsubmit" value="'. esc_attr__( 'Search' ) .'" />
-		</div>
-		</form>';
-	
-		return $form;
-	}
-	
-	add_filter( 'get_search_form', 'cphsuborbitals_search_form' );
-
-/*
---------------------------------------
-[ @ remove width & height from image ]
---------------------------------------
-*/
-
-	/* prevents WP from putting default link on images */
-	//add_action('pre_option_image_default_link_type', 'always_link_images_to_none');
-	
-	function always_link_images_to_none() {
-		return 'none';
-	}
-
-	function add_lightbox_to_images( $content ) {
-
-	   global $post;
-		
-	   $content = preg_replace( '/(height|width)=[\'\"]\d*[\'\"]\s/', '', $content );
-	   $content = preg_replace( '/(\<img[\s+].*"[\s+]src=")(.[^\"]*)(.[^\>]*\>)/', '<a href="$2" class="lightbox-pictures" rel="lightbox['.$post->ID.']">$1$2$3</a>', $content );
-
-	   return $content;
-	   
-	}
-	
-
-	function remove_width_and_height_attribute( $html ) {
-	   $html = preg_replace( '/(height|width)=[\'\"]\d*[\'\"]\s/', '', $html );
-	   return $html;
-	}
-
-
-
-/*
-------------------
-[ @ footer links ]
-------------------
-*/
-  
-  function cphsub_footer() {
-	  
-	  $footer = 
-	  '2013-'. date("Y") .' Copenhagen Suborbitals. Absolutely no rights reserved';
-	  $footer .= ' - <a style="color: white;" href="http://copsub.com/feed/">Blog rssfeed</a>';
-	  return $footer;
-  }
-
-  add_filter( 'cphsuborb_footer', 'cphsub_footer' );
 
 
 /*
@@ -453,77 +363,6 @@ require_once( CBH_PATH . '/library/detect_unit.php' );
 	add_filter( 'body_class', 'cphsuborbitals_body_class', 10, 1 );
 
 
-/*
-----------------------------
-[ @-> download files setup ]
-----------------------------
-*/	
-   
-   function cphsuborbitals_download_files() {
-	   
-		   global $post;
-		   $post_id = $post->ID;
-		   
-	       // download files
-		   if ( get_field( '_repeater_fields', $post_id ) ) {
-			   
-		    $a = 0;
-				   
-			   while ( has_sub_field( '_repeater_fields', $post_id ) ) {
-				   
-				   if ( get_sub_field( '_download_file', $post_id ) ) {
-					   
-			           if ( $a === 0 ) printf( '<h3>Download</h3>' );
-
-					   $file = get_sub_field( '_download_file', $post_id );
-					   $file_title = ! empty( $file['title'] ) ? $file['title'] : '';
-				       
-					   $file_type = array(); 
-				       $file_type['pdf'] = preg_match( '/pdf/', $file['mime_type'] );
-				       $file_type['zip'] = preg_match( '/zip/', $file['mime_type'] );
-				   
-				       if ( $file_type['pdf'] )  printf( '<a href="%s" target="_blank" class="download_file clr" title="%s">Download pdf</a>', $file['url'], $file_title );
-				       if ( $file_type['zip'] )  printf( '<a href="%s" target="_blank" class="download_file clr" title="%s">Download zip</a>', $file['url'], $file_title );
-				
-				   }
-				   
-				   $a+=1;
-				   
-			   } // end while
-			   
-			} // end if
-
-		   // page facts
-		   if ( get_field( '_facts', $post_id ) ) {
-			  
-			  $facts = get_field( '_facts', $post_id );
-			  printf( '<h3>Facts</h3><div class="facts clr">%s</div>', $facts );
-			  
-		   }
-
-		   // videos in overlay
-		   if ( get_field( '_video_repeater', $post_id ) ) {
-			   
-		    $b = 0;
-				   
-			   while ( has_sub_field( '_video_repeater', $post_id ) ) {
-				   
-				   if ( get_sub_field( '_video_overlay', $post_id ) ) {
-					   
-			           if ( $b === 0 ) printf( '<h3>Videos</h3>' );
-
-					   $video = get_sub_field( '_video_overlay', $post_id );
-					   echo $video;
-					   //$file_title = ! empty( $file['title'] ) ? $file['title'] : '';
-				
-				   }
-				   
-				   $b+=1;
-				   
-			   } // end while
-			   
-			} // end if
-	  } 
 
 /*
 ----------------------------------------
@@ -564,50 +403,7 @@ add_filter( 'mime_types', 'my_theme_custom_upload_mimes' );
 } // end child theme cphsuborbital
 
 
-function mytheme_comment($comment, $args, $depth) {
-	$GLOBALS['comment'] = $comment;
-	extract($args, EXTR_SKIP);
 
-	if ( 'div' == $args['style'] ) {
-		$tag = 'div';
-		$add_below = 'comment';
-	} else {
-		$tag = 'li';
-		$add_below = 'div-comment';
-	}
-?>
-	<<?php echo $tag ?> <?php comment_class( empty( $args['has_children'] ) ? '' : 'parent' ) ?> id="comment-<?php comment_ID() ?>">
-	<?php if ( 'div' != $args['style'] ) : ?>
-	<div id="div-comment-<?php comment_ID() ?>" class="comment-body">
-	<?php endif; ?>
-	<div class="comment-author vcard">
-	<?php if ( $args['avatar_size'] != 0 ) echo get_avatar( $comment, $args['avatar_size'] ); ?>
-	<?php printf( __( '<cite class="fn">%s</cite>' ), get_comment_author_link() ); ?>
-	<span class="comment-time-edit">
-	<a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ); ?>" class="comment-time">
-		<?php
-			/* translators: 1: date, 2: time */
-			printf( __('%1$s at %2$s'), get_comment_date(),  get_comment_time() ); ?></a><?php edit_comment_link( __( '(EDIT)' ), '  ', '' );
-		?>
-	</span>
-	</div>
-	<?php if ( $comment->comment_approved == '0' ) : ?>
-		<em class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.' ); ?></em>
-		<br />
-	<?php endif; ?>
-
-
-
-	<?php comment_text(); ?>
-
-	<div class="reply">
-	<?php comment_reply_link( array_merge( $args, array( 'add_below' => $add_below, 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
-	</div>
-	<?php if ( 'div' != $args['style'] ) : ?>
-	</div>
-	<?php endif; ?>
-<?php
-}
 
 /*
 -----------------------------------------------------------
@@ -620,5 +416,72 @@ require_once( trailingslashit( dirname(__FILE__) ) . './library/upme_customisati
 
 // Remove Product List RSS from webshop
 remove_action('wp_head', 'wpsc_product_list_rss_feed');
+
+
+/*
+-----------------------------------------------------------
+[ @-> Blog entry meta ]
+-----------------------------------------------------------
+*/
+Function copsub_entry_meta() {
+	if ( is_sticky() && is_home() && ! is_paged() )
+		echo '<span class="featured-post">' . __( 'Sticky', 'twentythirteen' ) . '</span>';
+
+	if ( ! has_post_format( 'link' ) && 'post' == get_post_type() )
+		twentythirteen_entry_date();
+
+	// Translators: used between list items, there is a space after the comma.
+	$categories_list = get_the_category_list( __( ', ', 'twentythirteen' ) );
+	if ( $categories_list ) {
+		//echo '<span class="categories-links">' . $categories_list . '</span>';
+	}
+
+	// Translators: used between list items, there is a space after the comma.
+	$tag_list = get_the_tag_list( '', __( ', ', 'twentythirteen' ) );
+	if ( $tag_list ) {
+		echo '<span class="tags-links">' . $tag_list . '</span>';
+	}
+
+	// Post author
+	//if ( 'post' == get_post_type() ) {
+	//	printf( '<span class="author vcard"><a class="url fn n" href="%1$s" title="%2$s" rel="author">%3$s</a></span>',
+	//		esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
+	//		esc_attr( sprintf( __( 'View all posts by %s', 'twentythirteen' ), get_the_author() ) ),
+	//		get_the_author()
+	//	);
+	//}
+}
+
+/*
+-----------------------------------------------------------
+[ @-> Excerpt and content length ]
+-----------------------------------------------------------
+*/
+
+function excerpt($limit) {
+  $excerpt = explode(' ', get_the_excerpt(), $limit);
+  if (count($excerpt)>=$limit) {
+    array_pop($excerpt);
+    $excerpt = implode(" ",$excerpt).'...';
+  } else {
+    $excerpt = implode(" ",$excerpt);
+  }	
+  $excerpt = preg_replace('`\[[^\]]*\]`','',$excerpt);
+  return $excerpt;
+}
+ 
+function content($limit) {
+  $content = explode(' ', get_the_content(), $limit);
+  if (count($content)>=$limit) {
+    array_pop($content);
+    $content = implode(" ",$content).'...';
+  } else {
+    $content = implode(" ",$content);
+  }	
+  $content = preg_replace('/\[.+\]/','', $content);
+  $content = apply_filters('the_content', $content); 
+  $content = str_replace(']]>', ']]&gt;', $content);
+  return $content;
+}
 
 ?>

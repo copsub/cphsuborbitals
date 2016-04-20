@@ -8,8 +8,7 @@
           <div class="entry-content clr">
           
        <?php get_template_part( 'content', get_post_format() ); ?>       
-       <a href="#" class="top">Back to top</a>
-             
+
           </div>
         </article>
 
@@ -23,3 +22,8 @@
 
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>
+
+
+
+
+<!-- patata single.php -->

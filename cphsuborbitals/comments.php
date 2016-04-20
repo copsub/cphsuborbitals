@@ -22,7 +22,7 @@ if ( post_password_required() )
 	<?php if ( have_comments() ) : ?>
 		<h2 class="comments-title">
 			<?php
-				printf( _nx( 'One comment', '%1$s comments', get_comments_number(), 'comments title', 'twentythirteen' ),
+				printf( _nx( 'One thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', 'twentythirteen' ),
 					number_format_i18n( get_comments_number() ), '<span>' . get_the_title() . '</span>' );
 			?>
 		</h2>
@@ -33,7 +33,6 @@ if ( post_password_required() )
 					'style'       => 'ol',
 					'short_ping'  => true,
 					'avatar_size' => 74,
-					'callback' => 'mytheme_comment',
 				) );
 			?>
 		</ol><!-- .comment-list -->
@@ -55,21 +54,8 @@ if ( post_password_required() )
 
 	<?php endif; // have_comments() ?>
 
-	<?php comment_form(); ?>
-	
-	<?php
-	if ( is_user_logged_in() ) {
+	<?php comment_form(array(
+  'submit_button'     => '<input name="%1$s" type="submit" id="%2$s" class="%3$s" value="%4$s" />',
+  'submit_field'      => '<p class="form-submit">%1$s %2$s</a>')) ?>
 
-	} else { ?>   
-
-	
-	<div class="comment-info">
-	If you are a Copenhagen Suborbitals supporter your login is your registered email and password. 
-	</div>
-	<div class="comment-info">
-	If your have forgotten your password <a href="/reset_password/">click here</a>. If you don’t remember which email is registered please contact us here: support@copsub.com
-	</div>
-   <?php
-};
-?>
 </div><!-- #comments -->
