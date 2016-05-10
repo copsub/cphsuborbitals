@@ -254,6 +254,18 @@ if ($front_section_2_active) {
 		<?php }?>
 		<?php } else {?>
 		<?php }?>
+		<?php //temp download section ?>
+		<td style="width: 300px;padding-left:0px;">
+		<a style="text-decoration: none;" href="<?php $server_name ?>/ressources/" onclick="_gaq.push(['_trackEvent','Support','Click','Big download button FP']);">
+		<div class="donatesquare arrowcontainer" style="background-image:url('<?php echo $themepath?>/img/square_download.png'); background-position: right bottom;background-repeat:no-repeat;">
+		Download posters, wallpapers and more here.
+		<div class="arrow"></div>
+		</div>
+		</a>
+		</td>
+
+			
+			
 		<td style="width: 30px;">&nbsp;</td>
 		</tr>
 		</table>
