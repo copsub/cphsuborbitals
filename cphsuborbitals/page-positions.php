@@ -8,7 +8,7 @@ Template Name: Positions template
 	get_header(); 
 
 	global $post;
-	$pre_sponsors_text    =  get_field( '_pre_sponsors_text', $post->ID );
+	$contact_form_shortcode    =  get_field( 'contact_form_shortcode', $post->ID );
 ?>
 
 <div class="main-area">
@@ -55,7 +55,7 @@ Template Name: Positions template
 			</section>   
 			<div>
 <?php
-echo do_shortcode('[contact-form-7 id="11483" title="Contact form 1"]');
+echo do_shortcode($contact_form_shortcode);
 ?>
 				</div>
 		</div>
