@@ -16,10 +16,10 @@ Template Name: Frontpage Sections Template
   $themepath = ( $server_name === 'sb1.local' ? 'http://sb1.local/wp-content/themes/cphsuborbitals' : CHILD_THEME_URI );
   //$url_for_steaming_link = get_field( 'url_for_steaming_link',  $post->ID );
   $url_for_steaming_link = get_youtube_streaming_url_from_text_file();
-  $url_for_post_link = get_field( 'url_for_post_link',  $post->ID );
-  $event_mode_active = get_field( 'event_mode_active',  $post->ID );
-  $url_link_ready = get_field( 'url_link_ready',  $post->ID );
-  $event_button_text = get_field( 'event_button_text',  $post->ID );
+  $url_for_post_link = get_field( 'url_for_post_link',  'option' );
+  $event_mode_active = get_field( 'event_mode_active',  'option' );
+  $url_link_ready = get_field( 'url_link_ready',  'option' );
+  $event_button_text = get_field( 'event_button_text',  'option' );
   
   //var from settings page
   $launch_time_date = get_field( 'launch_time_date', 'option' );
@@ -255,7 +255,7 @@ if ($front_section_2_active) {
 		<?php } else {?>
 		<?php }?>
 		<?php //temp download section ?>
-		<td style="width: 300px;padding-left:0px;">
+		<td style="width: 300px;padding-left:15px;">
 		<a style="text-decoration: none;" href="<?php $server_name ?>/ressources/" onclick="_gaq.push(['_trackEvent','Support','Click','Big download button FP']);">
 		<div class="donatesquare arrowcontainer" style="background-image:url('<?php echo $themepath?>/img/square_download.png'); background-position: right bottom;background-repeat:no-repeat;">
 		Download posters, wallpapers and more here.
