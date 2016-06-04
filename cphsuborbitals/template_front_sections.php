@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Frontpage Sections Template
+Template Name: Frontpage Sections Template (Desktop)
 */
 ?>
 

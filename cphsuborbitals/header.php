@@ -62,8 +62,7 @@ $themepath = ( $server_name === 'sb1.local' ? 'http://sb1.local/wp-content/theme
 	 $is_admin  = copsub_get_user_role( 'administrator' );
      
 	 if ( ! is_user_logged_in() ) { ?>
-	     <a class="user-login" href="<?php echo (site_url().'/wp-login.php'); ?>" title="Login">Login</a>
-    	 
+	  	 
      <?php 
 	 } ?>
 	 
