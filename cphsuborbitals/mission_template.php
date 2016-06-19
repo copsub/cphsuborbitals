@@ -24,7 +24,8 @@ $themepath = ( $server_name === 'sb1.local' ? 'http://sb1.local/wp-content/theme
   $launch_time_date = get_field( 'launch_time_date', 'option' );
   $launch_date = date('F jS', strtotime($launch_time_date));
   $launch_message = get_field( 'front_launch_message', 'option' );
-
+  $time_hiding_countdown_frontpage = get_field( 'time_hiding_countdown_frontpage',  'option' );
+  $show_countdown_on_frontpage = get_field( 'show_countdown_on_frontpage',  'option' );
  
 ?>
 
@@ -60,10 +61,32 @@ $themepath = ( $server_name === 'sb1.local' ? 'http://sb1.local/wp-content/theme
 
 <?php                    
 
-				echo '<div class="front_launch_message">Current estimated launch: July 16th</div>';
+		//		echo '<div class="front_launch_message">Current estimated launch: July 16th</div>';
 
-
-     ?>               
+											
+											
+							
+		switch ($show_countdown_on_frontpage) {
+			case "hidden":
+				echo '';
+				break;
+			case "message":
+				echo '<div class="front_launch_message">'.$launch_message.' '.$launch_date.'</div>';
+				break;
+			case "countdown":
+				if (strtotime('now') <= $time_hiding_countdown_frontpage) {
+				echo '<div class="front_launch_countdown">';
+				echo do_shortcode( '[ujicountdown id="NextTest" expire="'.$launch_time_date.'" hide="true" url="" subscr="Nexø I Launch" recurring="" rectype="second" repeats=""]' ); 
+				echo '</div>';
+				} else {
+				echo '<div class="front_launch_countdown">';
+				echo '<div class="front_launch_message">'.$launch_message.'</div>';
+				echo '</div>';				
+				}
+				break;
+		}
+		?>
+           
                     </div>
                        
    <?php
