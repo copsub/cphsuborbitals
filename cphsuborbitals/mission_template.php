@@ -60,7 +60,7 @@ $themepath = ( $server_name === 'sb1.local' ? 'http://sb1.local/wp-content/theme
 
 <?php                    
 
-				echo '<div class="front_launch_message">Launching Summer 2016</div>';
+				echo '<div class="front_launch_message">Current estimated launch: July 16th</div>';
 
 
      ?>               
