@@ -41,7 +41,7 @@ Template Name: Positions template
 			$logo_sponsor  =  get_field( '_sponsor_logo', get_the_id() );
 ?>
 	    
-					<tr><td><img src="<?php echo $logo_sponsor?>"></td></tr>
+					<tr><td></td></tr>
 					<tr><td><h3><?php the_title(); ?></h3></td></tr>
 				<tr><td><?php the_content(); ?></td></tr>
 <?php						
