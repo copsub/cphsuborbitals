@@ -8,6 +8,9 @@
  * @subpackage Twenty_Thirteen
  * @since Twenty Thirteen 1.0
  */
+
+$post_videolink_code = get_field( 'post_videolink_code',  $post->ID  );
+
 ?>
 
 
@@ -28,7 +31,14 @@
 
 		<?php if ( is_single() ) : ?>
 			<div class="entry-meta-single">
-				<?php twentythirteen_entry_meta(); ?>
+				
+				<?php
+if(!has_term('video', 'category', $post)) {
+  twentythirteen_entry_meta();
+}
+ ?>
+
+				
 				<?php if ( comments_open() && ! is_single() ) : ?>
 					<div class="comments-link">
 						<?php comments_popup_link( '<span class="leave-reply">' . __( 'Leave a comment', 'twentythirteen' ) . '</span>', __( 'One comment so far', 'twentythirteen' ), __( 'View all % comments', 'twentythirteen' ) ); ?>
@@ -50,6 +60,20 @@
 	</div><!-- .entry-summary -->
 	
 	<?php elseif ( is_single() ) : ?>
+	
+					<?php
+if(has_term('video', 'category', $post)) {
+?>
+<div style="margin-bottom:10px;">
+	
+
+<iframe width="878" height="494" src="https://www.youtube.com/embed/<?php echo $post_videolink_code; ?>?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+	</div>
+<?php	
+}
+ ?>
+	
+	
 			<?php the_content(); ?>
 	<?php else : ?>
 	<div class="entry-content">

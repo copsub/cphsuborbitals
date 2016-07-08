@@ -1,7 +1,22 @@
 <?php get_header(); ?>
 
-<div class="main-area">
+<?php 
+if(!has_term('video', 'category', $post)) {
+?>
+	<div class="main-area">
+<?php
+} else {
+?>
+ <div class="main-area" style="width: 98%;">
+<?php
+}
 
+
+?>
+
+
+	
+	
 	<?php while ( have_posts() ) : the_post(); ?>
 
         <article>
@@ -20,8 +35,25 @@
 
 </div>
 
-<?php get_sidebar(); ?>
-<?php get_footer(); ?>
+<?php
+if(!has_term('video', 'category', $post)) {
+  get_sidebar(); 
+}
+
+
+?>
+
+
+<?php 
+if(!has_term('video', 'category', $post)) {
+ get_footer(); 
+} else {
+	get_footer('mission'); 
+	
+}
+
+
+?>
 
 
 
