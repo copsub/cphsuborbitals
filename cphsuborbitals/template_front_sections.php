@@ -2,7 +2,16 @@
 /*
 Template Name: Frontpage Sections Template (Desktop)
 */
+
+$activate_war_mode = get_field( 'activate_war_mode',  'option' );
+
+if ($activate_war_mode) {
+
+header("Location: " . site_url() . "/nexo/");
+die();
+}
 ?>
+
 
 <?php get_header('front'); 
 

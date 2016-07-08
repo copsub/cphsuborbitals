@@ -503,7 +503,7 @@ body.home .main-container {
   position: relative;
   margin: 0 auto;
   max-width: 1000px;
-  padding: 40px 30px 30px 32px;
+  padding: 40px 50px 30px 32px;
 }
 .main-content .vline {
   position: absolute;
@@ -1371,6 +1371,7 @@ height: 460px;
 .main-area-full {
 width: 100%;
 min-height: 500px;
+padding: 0 40px 0 0;
 }
 
 .page-template-page-todo-php .vline {
@@ -2376,7 +2377,6 @@ div.missionnews span{
 
 section div.latest_news {
 padding: 10px;
-width:  610px;
 background-color: #EEE;
 }
 
@@ -2715,3 +2715,19 @@ input#paypal-submit{
 	/* border: solid #AAA 1px; */
 }
 
+img.aligncenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto 
+}
+iframe {
+    display: block;
+    margin-left: auto;
+    margin-right: auto 
+}
+
+table, tr, td, th {
+/*	border: 1px solid black; 
+	border-collapse: collapse;
+*/	
+}
