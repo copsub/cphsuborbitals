@@ -34,6 +34,7 @@ $estimated_mission_plan = get_field( 'estimated_mission_plan',  'option' );
 $live_blog_description = get_field( 'live_blog_description',  'option' );
 $for_the_press_content = get_field( 'for_the_press_content',  'option' );
 $more_about_image = get_field( 'more_about_image',  'option' );
+$mission_press_kit = get_field( 'mission_press_kit',  'option' );
 
 
 
@@ -80,7 +81,7 @@ If ($activate_war_mode) 	{
 		</td>
 	</tr>
 	<tr>
-		<td colspan="2"  style="height: 100px;border-top: 1px solid black; 	border-collapse: collapse;border-top-color: #999999">
+		<td colspan="2"  style="height: 50px;border-top: 1px solid black; 	border-collapse: collapse;border-top-color: #999999">
 			<div style="padding-top: 20px;"><?php echo $mission_content_top ?></div>
 		</td>
 	</tr>
@@ -114,6 +115,43 @@ If ($activate_war_mode) 	{
 			<span style="Color:black; Font-size:35px;font-weight: bold;line-height: 40px;padding-right: 10px;">Live blog</span>
 			<span style="Color:black; Font-size:12px;font-weight: normal;line-height: 18px;"><?php echo $live_blog_description ?></span>
 		</td>
+		<td style="width:33%; padding: 10px 10px 0 10px;" rowspan="2" >
+			
+			
+			
+						<table style="width: 100%;vertical-align:bottom;  padding-bottom: 10px; margin-top: 5px;">
+	<tr>
+		<td style="height: 60px; padding: 20px 10px 10px 0;vertical-align:bottom;" >
+			<span style="Color:black; Font-size:20px;font-weight: bold;line-height: 30px;padding-right: 10px;">Press:</span>
+		</td>
+	</tr>
+	<tr>
+		<td style="height: 100px; padding: 0 10px 10px 0;">
+			<?php echo $for_the_press_content ?>
+
+<?php 
+if (!$mission_press_kit == "") { 
+?>
+			<a style="color: white;text-decoration: none;" href="<?php echo $mission_press_kit; ?>">
+			<div class="orange_button" style="width: 220px; height: 40px;color: white; padding: 10px 0 0 10px; font-weight: normal;font-size:18px;">
+				Download press kit >
+				</a>
+			</div>
+<?php } else { ?>
+	
+			<div style="background-color: #FF4F00;width: 260px; height: 40px;color: white; padding: 10px 0 0 10px; font-weight: normal;font-size:18px;">
+				Press kit will be ready asap.
+			</div>
+	
+<?php } ?>
+		
+		</td>
+	</tr>
+</table>
+
+			
+			
+		</td>
 	</tr>
 	<tr>
 		<td style="height: 270px; padding: 20px 10px 10px 10px;border-top: 1px solid black; 	border-collapse: collapse;border-top-color: #999999" >
@@ -135,7 +173,7 @@ If ($activate_war_mode) 	{
       'update_pos t_meta_cache' => false,  // grabs post meta, remove if post meta required
       'update_post_term_cache'  => false, // grabs terms, remove if terms required (category, tag...)
       'post_type'               => array( 'post' ),
-      'posts_per_page'          => 3,
+      'posts_per_page'          => 4,
       'category_name'           => 'nexoe_news',
 	  'order'                   => 'date'
    ) );
@@ -144,7 +182,7 @@ If ($activate_war_mode) 	{
 
 <table style="width: 100%;vertical-align:bottom;  padding-bottom: 10px; background-color: #e7e7e7">
 	<tr>
-		<td style="height: 270px; padding: 20px 10px 10px 10px;" >
+		<td style="height: 270px; padding: 20px 10px 10px 10px;">
 			<div class="latest_news">
     	<ul style="list-style: none; margin: 0px;">
 <?php if ( $query->have_posts() ) : $query->have_posts();
@@ -169,6 +207,48 @@ while ( $query->have_posts() ) :	$query->the_post(); ?>
 		</td>
 		<td style="width: 50%; padding: 20px 10px 10px 10px;">
 			<?php echo $estimated_mission_plan ?>
+			
+			<div>
+
+				
+				
+			<table style="width: 100%;vertical-align:bottom;  padding-bottom: 10px; margin-top: 5px;">
+	<tr>
+		<td style="height: 60px; padding: 20px 10px 10px 0;vertical-align:bottom;" >
+			<span style="Color:black; Font-size:20px;font-weight: bold;line-height: 30px;padding-right: 10px;">Press:</span>
+		</td>
+	</tr>
+	<tr>
+		<td style="height: 100px; padding: 0 10px 10px 0;">
+			<?php echo $for_the_press_content ?>
+
+<?php 
+;
+
+				if (!$mission_press_kit == "") { 
+			?>
+			<a style="color: white;text-decoration: none;" href="<?php echo($mission_press_kit); ?>">
+			<div class="orange_button" style="width: 220px; height: 40px;color: white; padding: 10px 0 0 10px; font-weight: normal;font-size:18px;">
+				Download press kit >
+				</a>
+			</div>
+<?php } else { ?>
+	
+			<div style="background-color: #FF4F00;width: 260px; height: 40px;color: white; padding: 10px 0 0 10px; font-weight: normal;font-size:18px;">
+				Press kit will be ready asap.
+			</div>
+	
+<?php } ?>
+		
+		</td>
+	</tr>
+</table>
+
+				
+				
+				
+				
+			</div>
 		</td>
 	</tr>
 </table>
@@ -183,16 +263,22 @@ while ( $query->have_posts() ) :	$query->the_post(); ?>
 
 /* NEWSLETTER-DONATE SECTION START --------------------------------------------------------------------------------------------------------------------  */ 
 
-						If ($activate_war_mode) 	{	
+						If (1) 	{	
 			
 				?>
 	
-<table style="width: 100%;  background-color: #FF4F00">
+<table style="width: 100%; margin-top: 50px;">
 	<tr>
-		<td style="height: 80px; padding: 33px 10px 10px 10px;text-align: center;" >
-<a style="color: white;font-weight: bold;font-size:25px;text-decoration: none;" href="<?php echo get_site_url(); ?>/support-us/">Donate here ></a>
+		<td class="orange_button" style="height: 80px;text-align: center;" >
+<a  style="color: white;font-weight: bold;font-size:25px;text-decoration: none; " href="<?php echo get_site_url(); ?>/support-us/">
+	<div style=" padding: 33px 10px 30px 10px;">
+		Donate here >
+	</div>
+</a>
 		</td>
-		<td style="width: 50%; padding: 20px 10px 10px 10px;padding-left: 100px;">
+		<td style="width: 10%;">
+		</td>
+		<td style="width: 45%; padding: 20px 10px 10px 90px;background-color: #000">
 			<div>
 				<div style="margin-bottom: 5px;color: white;">
 					Sign up for our newsletter here:
@@ -270,55 +356,10 @@ while ( $query->have_posts() ) :	$query->the_post(); ?>
 
 				
 				
-	/* NEWSLETTER-DONATE SECTION START --------------------------------------------------------------------------------------------------------------------  */ 
-
-						If (!$activate_war_mode) 	{	
 			
-				?>
-	
-<table style="width: 100%;  background-color: #FF4F00">
-	<tr>
-		<td style="height: 80px; padding: 33px 10px 10px 10px;text-align: center;" >
-<a style="color: white;font-weight: bold;font-size:25px;text-decoration: none;" href="<?php echo get_site_url(); ?>/support-us/">Donate here ></a>
-		</td>
-		<td style="width: 50%; padding: 20px 10px 10px 10px;padding-left: 100px;">
-			<div>
-				<div style="margin-bottom: 5px;color: white;">
-					Sign up for our newsletter here:
-				</div>
-			
-	<?php echo do_shortcode('[mc4wp_form id="11166"]') ?>
-				</div>
-		</td>
-	</tr>
-</table>				
-				
-				
-
-					
-					
-
-	
-<?php
-						}			
-/* NEWSLETTER-DONATE SECTION END  ---------------------------------------------------------------------------------------------------------------------  */ 
-			
-/* PR SECTION START -----------------------------------------------------------------------------------------------------------------------------  */ 
 				
 ?>
 	
-				<table style="width: 100%;vertical-align:bottom;  padding-bottom: 10px; background-color: #FFF; margin-top: 30px;">
-	<tr>
-		<td style="height: 60px; padding: 20px 10px 10px 10px;vertical-align:bottom;" >
-			<span style="Color:black; Font-size:35px;font-weight: bold;line-height: 40px;padding-right: 10px;">For the press</span>
-		</td>
-	</tr>
-	<tr>
-		<td style="height: 270px; padding: 20px 10px 10px 10px;border-top: 1px solid black; 	border-collapse: collapse;border-top-color: #999999" >
-			<?php echo $for_the_press_content ?>
-		</td>
-	</tr>
-</table>
 				
 				
 
@@ -326,7 +367,6 @@ while ( $query->have_posts() ) :	$query->the_post(); ?>
 				
 <?php				
 				
-/* PR SECTION END -------------------------------------------------------------------------------------------------------------------------------  */ 
 					
 				
 

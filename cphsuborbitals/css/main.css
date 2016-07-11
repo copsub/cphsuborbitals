@@ -2731,3 +2731,37 @@ table, tr, td, th {
 	border-collapse: collapse;
 */	
 }
+
+.orange_button {
+background-color: #FF4F00;	
+	
+}
+
+:hover.orange_button {
+	background-color: black;
+}
+
+td.black_button {
+background-color: black;	
+	
+}
+
+td:hover.black_button {
+	background-color: #e7e7e7;
+}
+
+input[type=submit] {
+    padding:5px 15px; 
+    background:#ccc; 
+    border:0 none;
+    cursor:pointer;
+
+}
+
+input[type=submit]:hover {
+    padding:5px 15px; 
+    background:#FF4F00; 
+    border:0 none;
+    cursor:pointer;
+ 
+}
