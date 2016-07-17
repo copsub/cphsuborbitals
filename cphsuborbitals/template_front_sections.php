@@ -157,7 +157,7 @@ if ($front_section_1_active) {
 		</div>
 	</div>
 	
-		<div style="position: relative; width:100%; margin-top: 55px;">
+		<div style="position: relative; width:100%; margin-top: 55px;"  id="newsletter-signup">
 		<div style="text-align: left; padding-top: 0px; padding-bottom: 0px; padding-right: 32px; padding-left: 30px; margin: 0 auto; width: 1000px; font: 22px helvetica, sans-serif; font-weight: normal; color: #FFFFFF;">
 		<a style="text-decoration: none;"  href="<?php echo $front_section_1_link_button ?>" title="" onclick="_gaq.push(['_trackEvent','Media','Click','Watch Us on FP']);">
 		<div class="gotomissionsquare">

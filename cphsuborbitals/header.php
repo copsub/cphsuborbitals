@@ -42,9 +42,9 @@ $themepath = ( $server_name === 'sb1.local' ? 'http://sb1.local/wp-content/theme
 
 
 <div id="donatebar" style="background-color:#FF4F00;">
-	<div style="margin: 0 auto; width: 860px;padding-left:655px;padding-top:10px;">
-      	<span style="margin-right:5px;"><a href="<?php $server_name ?>/support-us/" onclick="_gaq.push(['_trackEvent','Support','Click','Donate on donatebar']);"><img src="<?php echo $themepath?>/img/donate_icon.png"></a></span>
-      	<span><a href="#TB_inline?width=400&height=200&inlineId=CAWC_social_share_popup" class="thickbox"><img src="<?php echo $themepath?>/img/share_icon.png" alt="Share Social" title="Share this"/></a></span>          
+	<div style="margin: 0 auto; width: 860px;padding-left:640px;padding-top:10px;">
+      	<span><a href="<?php $server_name ?>/#newsletter-signup" style="margin-right:5px;"><img src="<?php echo $themepath?>/img/newsletter_icon.png" alt="Share Social" title="Share this"/></a></span>          
+      	<span style=""><a href="<?php $server_name ?>/support-us/" onclick="_gaq.push(['_trackEvent','Support','Click','Donate on donatebar']);"><img src="<?php echo $themepath?>/img/donate_icon.png"></a></span>
     </div>
 </div>
 
