@@ -42,9 +42,17 @@ $themepath = ( $server_name === 'sb1.local' ? 'http://sb1.local/wp-content/theme
 
 
 <div id="donatebar" style="background-color:#FF4F00;">
-	<div style="margin: 0 auto; width: 860px;padding-left:640px;padding-top:10px;">
-      	<span><a href="<?php $server_name ?>/#newsletter-signup" style="margin-right:5px;"><img src="<?php echo $themepath?>/img/newsletter_icon.png" alt="Share Social" title="Share this"/></a></span>          
-      	<span style=""><a href="<?php $server_name ?>/support-us/" onclick="_gaq.push(['_trackEvent','Support','Click','Donate on donatebar']);"><img src="<?php echo $themepath?>/img/donate_icon.png"></a></span>
+	<div style="margin: 0 auto; width: 860px;padding-left:640px;padding-top:5px;">
+		<table>
+			<tr>
+			  <td></td>
+				<td style="width:52px;"><a href="<?php $server_name ?>/#newsletter-signup" style=""><div class="newsletter-button"></div></a> </td>
+				<td style="width:52px;"><a href="<?php $server_name ?>/support-us/" onclick="_gaq.push(['_trackEvent','Support','Click','Donate on donatebar']);"><div class="donatetop-button"></div></a></td>
+			</tr>			
+		</table>
+		
+      	      
+      	
     </div>
 </div>
 

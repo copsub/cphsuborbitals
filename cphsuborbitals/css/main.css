@@ -2313,6 +2313,40 @@ div.header-top div.cphsuborb-logo a {
   /* z-index: 2; */
 }
 
+.donatetop-button {
+  background-image: url('../img/donate_icon.png') !important;
+	background-repeat: no-repeat !important;
+	background-position: center center !important;
+	background-size: 80% !important;
+	width: 203px;
+  height: 50px;
+  z-index: 99;
+}
+
+.donatetop-button:hover {
+  background-image: url('../img/donate_icon.png') !important;
+	background-repeat: no-repeat !important;
+	background-position: center center !important;
+	background-size: 83% !important;
+}
+
+.newsletter-button {
+  background-image: url('../img/newsletter_icon.png') !important;
+	background-repeat: no-repeat !important;
+	background-position: center center !important;
+	background-size: 80% !important;
+  width: 53px;
+  height: 50px;
+  z-index: 99;
+}
+
+.newsletter-button:hover {
+  background-image: url('../img/newsletter_icon.png') !important;
+	background-repeat: no-repeat !important;
+	background-position: center center !important;
+	background-size: 83% !important;
+}
+
 .youtube-button {
   background: url('../img/youtube.png') no-repeat center center !important;
   width: 53px;
