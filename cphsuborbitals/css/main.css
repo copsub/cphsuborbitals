@@ -2141,8 +2141,8 @@ height: 60px;
 }
 
 .gotomissionsquare {
-color: #000;
-background: #FF4F00 url('../img/pointer-black.png') no-repeat 89% 50%;  
+color: #FFF;
+background: #FF4F00 url('../img/pointer-white.png') no-repeat 89% 50%;  
 padding: 20px 60px 20px 20px;
 font: 19px helvetica, sans-serif;
 font-weight: bold;
@@ -2151,8 +2151,8 @@ height: 60px;
 }
 
 .gotomissionsquare:hover {
-color: #FFF;
-background: #CCC url('../img/pointer-white.png') no-repeat 89% 50%;  
+color: #000;
+background: #CCC url('../img/pointer-black.png') no-repeat 89% 50%;  
 padding: 20px 60px 20px 20px;
 font: 19px helvetica, sans-serif;
 font-weight: bold;

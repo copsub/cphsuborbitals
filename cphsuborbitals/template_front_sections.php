@@ -109,7 +109,7 @@ if ($front_section_1_active) {
 <div style="position:absolute; top:0px; left: 0px; height: <?php echo $background_image_front_section_1[height] ?>px; width:100%; margin-left: auto; margin-right: auto; background-color: #9a9a9a; background-image:url('<?php echo $background_image_front_section_1[url] ?>'); background-position: center top;background-repeat:no-repeat;">
 
 	<?php //Countdown section ?>
-	<div style="position: relative; width:100%; margin-top: 60px;">
+	<div style="position: relative; width:100%; margin-top: 30px;">
 		<div style="text-align: right; padding-top: 0px; padding-bottom: 0px; padding-right: 50px; padding-left: 570px; margin: 0 auto; width: 1034px; font: 22px helvetica, sans-serif; font-weight: normal; color: #FFFFFF;">
 		<?php 
 		switch ($show_countdown_on_frontpage) {
@@ -146,8 +146,8 @@ if ($front_section_1_active) {
 	</div>
 
 	<?php //Mission has started ?>
-	<div style="position: relative; width:100%; margin-top: 5px;">
-		<div style="text-align: right; padding-top: 0px; padding-bottom: 0px; padding-right: 34px; padding-left: 400px; margin: 0 auto; width: 1000px; font: 52px helvetica, sans-serif; font-weight: bold; color: #FFFFFF;">
+	<div style="position: relative; width:100%; margin-top: 0;">
+		<div style="text-align: left; padding-top: 0px; padding-bottom: 0px; padding-right: 34px; padding-left: 30px; margin: 0 auto; width: 1000px; font: 52px helvetica, sans-serif; font-weight: bold; color: #FFFFFF;">
 		<div class="front_text_launch">
 		<?php echo $front_section_1_headline_l1;
 
@@ -157,15 +157,8 @@ if ($front_section_1_active) {
 		</div>
 	</div>
 	
-	<div style="position: relative; width:100%; margin-top: 25px;">
-		<div style="text-align: right; padding-top: 0px; padding-bottom: 0px; padding-right: 32px; padding-left: 850px; margin: 0 auto; width: 1000px; font: 22px helvetica, sans-serif; font-weight: normal; color: #FFFFFF;">
-		<div class="front_mission_patch" style="background-image:url('<?php echo $themepath?>/img/nexoepatch.png'); width:119px; height:98px;">
-		</div>
-		</div>
-	</div>
-
-	<div style="position: relative; width:100%; margin-top: 55px;">
-		<div style="text-align: right; padding-top: 0px; padding-bottom: 0px; padding-right: 32px; padding-left: 660px; margin: 0 auto; width: 1000px; font: 22px helvetica, sans-serif; font-weight: normal; color: #FFFFFF;">
+		<div style="position: relative; width:100%; margin-top: 55px;">
+		<div style="text-align: left; padding-top: 0px; padding-bottom: 0px; padding-right: 32px; padding-left: 30px; margin: 0 auto; width: 1000px; font: 22px helvetica, sans-serif; font-weight: normal; color: #FFFFFF;">
 		<a style="text-decoration: none;"  href="<?php echo $front_section_1_link_button ?>" title="" onclick="_gaq.push(['_trackEvent','Media','Click','Watch Us on FP']);">
 		<div class="gotomissionsquare">
 		Go to the mission page
@@ -173,6 +166,36 @@ if ($front_section_1_active) {
 		</a>
 		</div>
 	</div>
+	
+
+		<div style="position: relative; width:100%; margin-top: 35px;">
+		<div style="text-align: left; padding-top: 0px; padding-bottom: 0px; padding-right: 32px; padding-left: 30px; margin: 0 auto; width: 1000px; font: 18px helvetica, sans-serif; font-weight: normal; color: #FFFFFF;">
+
+			<div>
+				<div style="margin-bottom: 5px;color: white;">
+					Sign up for our newsletter:
+				</div>
+			
+	<?php echo do_shortcode('[mc4wp_form id="11166"]') ?>
+				</div>			
+			
+		</div>
+	</div>
+	
+	
+<!--	
+	<div style="position: relative; width:100%; margin-top: 35px;">
+		<div style="text-align: left; padding-top: 0px; padding-bottom: 0px; padding-right: 32px; padding-left: 30px; margin: 0 auto; width: 1000px; font: 22px helvetica, sans-serif; font-weight: normal; color: #FFFFFF;">
+		<div class="front_mission_patch" style="background-image:url('<?php echo $themepath?>/img/nexoepatch.png'); width:119px; height:98px;">
+		</div>
+		</div>
+	</div>
+-->
+	
+
+	
+	
+	
 </div>
 
 <?php  } ?>
