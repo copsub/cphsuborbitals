@@ -15,6 +15,7 @@ $url_for_steaming_link = get_youtube_streaming_url_from_text_file();
 $mission_live_blog = get_field( 'mission_live_blog',  $post->ID  );
 $about_the_mission_title = get_field( 'about_the_mission_title',  'option'  );
 $about_the_mission_content = get_field( 'about_the_mission_content',  'option'  );
+$about_the_mission_content_below = get_field( 'about_the_mission_content_below',  'option'  );
 
 //var from settings page
 $launch_time_date = get_field( 'launch_time_date', 'option' );
@@ -318,7 +319,48 @@ while ( $query->have_posts() ) :	$query->the_post(); ?>
   
   <?php echo $about_the_mission_content ?>		</td>
 	</tr>
-</table>				
+	
+	<tr>
+	
+	<td style="height: 220px; padding: 30px 0 10px 0;border-top: 1px solid black;border-bottom: 1px solid black; 	border-collapse: collapse;border-top-color: #999999" >
+		
+		<table>
+			<tr>
+			<td style="padding: 0 27px 0 0;">
+						<iframe style="margin: 0;" width="198" height="110" src="https://www.youtube.com/embed/YvZI5h7Sj0Y?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+				</td>
+				<td style="padding: 0 27px 0 0;">
+						<iframe style="margin: 0;" width="198" height="110" src="https://www.youtube.com/embed/3ECQL3g_Woo?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+				</td>
+				<td style="padding: 0 27px 0 0;">
+						<iframe style="margin: 0;" width="198" height="110" src="https://www.youtube.com/embed/rsUp5WUwU-8?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+
+				</td>
+				<td style="padding: 0 0 0 0;">
+						<iframe style="margin: 0;" width="198" height="110" src="https://www.youtube.com/embed/a6yXovY-b8E?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+
+				</td>
+			</tr>
+			<tr>
+			<td style="padding: 5px 27px 0 0;">Final adjustmens of the ballute and parachute before launch of the Nexø 1 rocket.</td>
+			<td style="padding: 5px 27px 0 0;">Final adjustmens of the guidance system before launch of the Nexø 1 Rocket.</td>
+			<td style="padding: 5px 27px 0 0;">NEXØ 1 Sea Acceptance Test 2016</td>
+			<td style="padding: 5px 0 0 0;">CS Flotilla 2016</td>
+			
+			</tr>
+		</table>
+		
+
+		
+		</td>
+	</tr>
+	
+	
+<tr><td>
+			<?php echo $about_the_mission_content_below ?>
+
+	</td></tr>
+				</table>				
 				
 				
 				
