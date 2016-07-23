@@ -62,10 +62,16 @@ If ($activate_war_mode) 	{
 		</td>
 		<td style="text-align:right; width: 200px;">
 			<img src="<?php echo $mission_landing_page_top_logo[url] ?>" style="height:100px;">
+
+
 		</td>
 	</tr>
 	<tr>
 		<td colspan="2"  style="height: 50px;border-top: 1px solid black; 	border-collapse: collapse;border-top-color: #999999">
+						<?php If (!$url_link_ready) { ?>
+
+			<div style="padding-top: 20px;"><?php echo $mission_content_top ?></div>
+<?php  } ?>
 		</td>
 	</tr>
 </table>
