@@ -16,6 +16,9 @@ $mission_live_blog = get_field( 'mission_live_blog',  $post->ID  );
 $about_the_mission_title = get_field( 'about_the_mission_title',  'option'  );
 $about_the_mission_content = get_field( 'about_the_mission_content',  'option'  );
 $about_the_mission_content_below = get_field( 'about_the_mission_content_below',  'option'  );
+$url_link_ready = get_field( 'url_link_ready',  'option'  );
+
+
 
 //var from settings page
 $launch_time_date = get_field( 'launch_time_date', 'option' );
@@ -94,7 +97,7 @@ If ($activate_war_mode) 	{
 /* SUB HEADER SECTION END ------------------------------------------------------------------------------------------------------------------------------  */ 
 			
 			If ($activate_war_mode) 	{		
-			
+			If ($url_link_ready) {
 /* LIVESTREAM SECTION START ----------------------------------------------------------------------------------------------------------------------------  */ 
 			?>
 			<section class="text">
@@ -103,7 +106,7 @@ If ($activate_war_mode) 	{
      	<div style="padding: 20px 0 20px 0;">
 			<?php
 /* LIVESTREAM SECTION END  -----------------------------------------------------------------------------------------------------------------------------  */ 
-			
+			}
 			} 
 			
 
