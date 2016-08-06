@@ -1,4 +1,4 @@
-jQuery.get("http://ipinfo.io", function (response) {
+jQuery.get("//ipinfo.io", function (response) {
   if (response.country == "DK") {
   jQuery("#currency_code").val("DKK");
   }
