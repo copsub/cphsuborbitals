@@ -7,7 +7,7 @@ $activate_war_mode = get_field( 'activate_war_mode',  'option' );
 
 if ($activate_war_mode) {
 
-header("Location: " . site_url() . "/nexo/");
+header("Location: " . site_url() . "/livestream/");
 die();
 }
 ?>
