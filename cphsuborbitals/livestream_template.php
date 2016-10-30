@@ -66,7 +66,14 @@ Template Name: Livestream template
 											
 											<iframe width="878" height="494" src="https://www.youtube.com/embed/<?php echo $url_for_steaming_link; ?>?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
                     </section>    
-
+						<section>
+						<div style="padding-top: 30px;">
+							
+						
+						<a class="twitter-timeline" href="https://twitter.com/CopSub">Tweets by CopSub</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+						
+						</section>
+	</div>
 						<?php edit_post_link( __( 'Edit', 'twentythirteen' ), '<span class="edit-link">', '</span>' ); ?>
 
 
