@@ -46,7 +46,8 @@ Template Name: Livestream template
 
                     <section class="text">
 						<?php the_content(); ?>
-						<?php _e( wp_oembed_get( $url_for_steaming_link ) ); ?>
+											
+											<iframe width="878" height="494" src="https://www.youtube.com/embed/<?php echo $url_for_steaming_link; ?>?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
                     </section>    
 
 						<?php edit_post_link( __( 'Edit', 'twentythirteen' ), '<span class="edit-link">', '</span>' ); ?>
